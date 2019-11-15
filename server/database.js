@@ -1,4 +1,4 @@
-const MongoMemoryServer = require('mongodb-memory-server').MongoMemoryServer;
+const MongoMemoryServer = require("mongodb-memory-server").MongoMemoryServer;
 const mongoose = require("mongoose");
 const {Product, categories} = require("./product.model.js");
 const createProducts = require("./mockData.js");
@@ -18,11 +18,11 @@ async function startInMemoryDB(){
 function connect({uri, port, dbName, dbPath}){
   mongoose.connect(`${uri}`, {useNewUrlParser: true})
   .then(res =>{
-    console.log("Successfully connected!")
+    console.log("Successfully connected!");
     migrate();
   })
   .catch( err =>{
-    console.log('error was', err);
+    console.log("error was", err);
   });
 }
 

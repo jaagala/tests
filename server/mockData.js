@@ -20,7 +20,7 @@ const createProducts = () => {
   return PHONES_NAMES.map( (name, index) => ({
     title: name,
     price: PHONE_PRICES[index]
-  }))
+  }));
 };
 
 module.exports = createProducts;
