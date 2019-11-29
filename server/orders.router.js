@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {Order} = require("./order.model.js");
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 
 router.get("/", async (req, res)=>{
   const xs = await Order.find({});
@@ -26,17 +26,17 @@ router.post("/", (req, res) => {
   });
 });
 
-router.get("/", (req, res) => {
-  Order.find({}, function (err, products) {
-    if (err) {
-      console.log("Error:", err);
-      res.status(500).send(err);
+router.get("/search", (req, res) => {
+  console.log(req.query);
+  Order.find({}, function(err, Order) {
+    if(err) {
+      console.log("Error :", err);
       return;
     }
-    res.send(products);
+    res.send(Order);
   });
+  res.send(200);
 });
-
 
 
 

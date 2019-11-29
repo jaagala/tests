@@ -13,7 +13,7 @@ class Test6 extends React.PureComponent {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("Submit", this.state);
-    fetch("/api/v1/orders", {
+    fetch("/api/v1/orders/search", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
